@@ -1,24 +1,25 @@
 def divide(a, b):
+    if b == 0:
+        raise ValueError("Cannot divide by zero")
     return a / b
 
+
 def calculate_average(numbers):
-    total = 0
-    for i in range(0, len(numbers)):
-        total = total + numbers[i]
-    average = total / len(numbers)
-    return average
+    if not numbers:
+        raise ValueError("Cannot calculate the average of an empty list")
+    return sum(numbers) / len(numbers)
 
-def unused_helper():
-    x = 10
-    y = 20
-    return x
 
-password = "hunter2"  # hard-coded secret — a security hotspot
+def multiply(a, b):
+    return a * b
+
 
 def main():
     nums = [4, 8, 15, 16, 23, 42]
     print("Average:", calculate_average(nums))
-    print("Division:", divide(10, 0))
+    print("Division:", divide(10, 2))
+    print("Multiplication:", multiply(10, 2))
+
 
 if __name__ == "__main__":
     main()
